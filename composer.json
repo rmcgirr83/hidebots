@@ -1,0 +1,24 @@
+{
+	"name": "rmcgirr83/hidebots",
+	"type": "phpbb-extension",
+	"description": "Hides robots in the Who is online stats",
+	"version": "1.0.0",
+	"time": "2016-07-10",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+		"name": "Rich McGirr",
+		"role": "Extension Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": ">=3.1.7, <3.4"
+	},
+	"extra": {
+		"display-name": "Hide Bots",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.7,<3.4"
+		}
+	}
+}
