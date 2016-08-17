@@ -1,8 +1,8 @@
 {
 	"name": "rmcgirr83/hidebots",
 	"type": "phpbb-extension",
-	"description": "Hides robots in the Who is online stats",
-	"version": "1.0.0",
+	"description": "Hides robots in the Who is online stats to all but those who are administrators",
+	"version": "1.0.1",
 	"time": "2016-07-10",
 	"license": "GPL-2.0",
 	"authors": [
