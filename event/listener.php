@@ -53,7 +53,7 @@ class listener implements EventSubscriberInterface
 	{
 		// only run for non admins
 		// most of code from phpBB Extension - tas2580 Hide Bots
-		//* @copyright (c) 2015 tas2580 (https://tas2580.net)		
+		//* @copyright (c) 2015 tas2580 (https://tas2580.net)
 		if (!$this->auth->acl_get('a_'))
 		{
 			$online_users = $event['online_users'];
