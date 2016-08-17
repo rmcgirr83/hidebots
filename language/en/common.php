@@ -37,5 +37,5 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'HIDEBOTS_REQUIRE_3.1.7'		=> 'This extension requires at least phpBB version 3.1.7.  Please update your forum to be able to use this extension',
+	'HIDEBOTS_REQUIRE_3.1.7'		=> 'This extension requires at least phpBB version 3.1.7.  Please update your forum to be able to use this extension.',
 ));
