@@ -46,6 +46,7 @@ class listener implements EventSubscriberInterface
 	{
 		return array(
 			'core.obtain_users_online_string_modify'	=> 'change_online_string',
+			'core.viewonline_modify_sql'				=> 'change_sql_array',
 		);
 	}
 
@@ -99,6 +100,17 @@ class listener implements EventSubscriberInterface
 			}
 			$event['l_online_users'] = $l_online_users;
 			$event['online_userlist'] = $online_userlist;
+		}
+	}
+
+	public function change_sql_array ($event)
+	{
+		// only run for non admins
+		if (!$this->auth->acl_get('a_'))
+		{
+			$sql_ary = $event['sql_ary'];
+			$sql_ary['WHERE'] .= ' AND u.user_type <> ' . USER_IGNORE;
+			$event['sql_ary'] = $sql_ary;
 		}
 	}
 }
