@@ -4,7 +4,7 @@
 	"description": "Hides robots in the Who is online stats to all but those who are administrators",
 	"version": "1.0.3",
 	"time": "2020-02-22",
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"authors": [
 		{
 		"name": "Rich McGirr",
