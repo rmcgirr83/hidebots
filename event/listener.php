@@ -47,6 +47,8 @@ class listener implements EventSubscriberInterface
 		return array(
 			'core.obtain_users_online_string_modify'	=> 'change_online_string',
 			'core.viewonline_modify_sql'				=> 'change_sql_array',
+			// activity 24 hours extension
+			'rmcgirr83.activity24hours.modify_active_users'	=> 'activity24hours_modify'
 		);
 	}
 
@@ -112,5 +114,30 @@ class listener implements EventSubscriberInterface
 			$sql_ary['WHERE'] .= ' AND u.user_type <> ' . USER_IGNORE;
 			$event['sql_ary'] = $sql_ary;
 		}
+	}
+
+	public function activity24hours_modify ($event)
+	{
+		// only run for non admins
+		if (!$this->auth->acl_get('a_'))
+		{
+			$active_users = $event['active_users'];
+
+			$active_users_cleaned = $this->clean_array($active_users, 'user_type', USER_IGNORE);
+
+			$event['active_users'] = $active_users_cleaned;
+		}
+	}
+
+	private function clean_array ($array, $key, $value)
+	{
+		foreach($array as $subkey => $subarray)
+		{
+			if($subarray[$key] == $value)
+			{
+				unset($array[$subkey]);
+			}
+		}
+		return $array;
 	}
 }
