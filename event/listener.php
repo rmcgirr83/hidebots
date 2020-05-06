@@ -123,7 +123,7 @@ class listener implements EventSubscriberInterface
 		{
 			$active_users = $event['active_users'];
 
-			$active_users_cleaned = $this->clean_array($active_users, 'user_type', USER_IGNORE);
+			$active_users_cleaned = $active_users ? $this->clean_array($active_users, 'user_type', USER_IGNORE) : array();
 
 			$event['active_users'] = $active_users_cleaned;
 		}
@@ -131,9 +131,9 @@ class listener implements EventSubscriberInterface
 
 	private function clean_array ($array, $key, $value)
 	{
-		foreach ($array as $subkey => $subarray)
+		foreach($array as $subkey => $subarray)
 		{
-			if ($subarray[$key] == $value)
+			if($subarray[$key] == $value)
 			{
 				unset($array[$subkey]);
 			}
