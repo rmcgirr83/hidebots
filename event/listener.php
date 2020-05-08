@@ -131,9 +131,9 @@ class listener implements EventSubscriberInterface
 
 	private function clean_array ($array, $key, $value)
 	{
-		foreach($array as $subkey => $subarray)
+		foreach ($array as $subkey => $subarray)
 		{
-			if($subarray[$key] == $value)
+			if ($subarray[$key] == $value)
 			{
 				unset($array[$subkey]);
 			}
