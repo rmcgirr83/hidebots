@@ -6,6 +6,12 @@ phpBB extension that will not show bots to regular users and guests within the o
 [![Build Status](https://travis-ci.org/rmcgirr83/hidebots.svg?branch=master)](https://travis-ci.org/rmcgirr83/hidebots)
 ## Installation
 
+Admin View
+![Screenshot](admin_view.PNG)
+
+Guest View
+![Screenshot](guest_view.PNG)
+
 ### 1. clone
 Clone (or download and move) the repository into the folder ext/rmcgirr83/hidebots:
 
