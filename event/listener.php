@@ -15,6 +15,7 @@ namespace rmcgirr83\hidebots\event;
 use phpbb\auth\auth;
 use phpbb\config\config;
 use phpbb\language\language;
+use phpbb\template\template;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -31,6 +32,9 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\language\language */
 	protected $language;
 
+	/** @var \phpbb\template\template */
+	protected $template;
+
 	/**
 	* Constructor
 	*
@@ -38,11 +42,13 @@ class listener implements EventSubscriberInterface
 	public function __construct (
 			auth $auth,
 			config $config,
-			language $language)
+			language $language,
+			template $template)
 	{
 		$this->auth = $auth;
 		$this->config = $config;
 		$this->language = $language;
+		$this->template = $template;
 	}
 
 	static public function getSubscribedEvents ()
