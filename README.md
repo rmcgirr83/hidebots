@@ -1,7 +1,8 @@
-Hide Bots
-=========================
+# Hide bots for phpBB3
 
 phpBB extension that will not show bots to regular users and guests within the online user list in the stats section.  Admins will still be able to see the bots in the stats section.
+
+[![Build Status](https://github.com/rmcgirr83/hidebots/workflows/Tests/badge.svg)](https://github.com/rmcgirr83/hidebots/actions)
 
 ## Installation
 
