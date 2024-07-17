@@ -33,7 +33,7 @@ jobs:
 
         steps:
             - name: Checkout phpBB
-              uses: actions/checkout@32
+              uses: actions/checkout@v3
               with:
                   repository: phpbb/phpbb
                   ref: ${{ env.PHPBB_BRANCH }}
